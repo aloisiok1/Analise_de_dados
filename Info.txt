@@ -1,0 +1,6 @@
+Evolução no processo de análise exploratória de dados no Python.
+ - Aquisição e Leitura de Dados Reais
+ - Primeiras visualizações de dados
+ - Manipulação de dados
+ - Análise de Gráficos e Criação de Hipóteses
+ - Manipulação e Interpretação de Gráficos
