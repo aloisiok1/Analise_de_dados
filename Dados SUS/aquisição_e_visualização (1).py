@@ -9,6 +9,11 @@ Original file is located at
 
 pip install matplotlib
 
+"""# Nova seção
+
+# Nova seção
+"""
+
 pip install pandas
 
 import pandas as pd
@@ -153,4 +158,59 @@ plota_gastos_por_mes(ordenados_por_total[ordenados_por_total.columns[-72:]].head
 plt.ylim(0, 650)
 plt.xticks([0, 12, 24, 36, 48, 60, 72], [2015, 2016, 2017, 2018, 2019, 2020, 2021])
 plt.grid(True, linestyle='--', linewidth=0.5, color="gray")
+plt.show()
+
+mes_mais_recente = ordenados_por_total.columns[-1]
+mes_mais_recente
+
+gastos_do_mais_recente = ordenados_por_total[mes_mais_recente]
+gastos_do_mais_recente.head()
+
+gastos_do_mais_recente.plot()
+
+gastos_do_mais_recente.plot(kind="pie")
+
+gastos_do_mais_recente.sample(frac=1).plot(kind="pie")
+
+gastos_do_mais_recente
+
+gastos_do_mais_recente.loc["41 Paraná"]
+
+gastos_do_mais_recente/gastos_do_mais_recente.loc["41 Paraná"]
+
+tabela_de_comparacao = gastos_do_mais_recente/gastos_do_mais_recente.loc["41 Paraná"]
+tabela_de_comparacao.head()
+
+tabela_de_comparacao.plot(kind="pie")
+
+tabela_de_comparacao.plot(kind="bar")
+
+tabela_de_comparacao.plot(kind="barh")
+
+tabela_de_comparacao.plot(kind="bar")
+
+tabela_de_comparacao = tabela_de_comparacao.sort_values(ascending=False)
+tabela_de_comparacao.plot(kind="bar")
+
+tabela_de_comparacao.describe()
+
+tabela_de_comparacao = tabela_de_comparacao.sort_values(ascending=False)
+tabela_de_comparacao.plot(kind="bar")
+
+ax = tabela_de_comparacao.plot(kind="bar")
+valor_limite = 1
+ax.axhline(valor_limite, color='red', linestyle='--')
+ax.set_ylabel("Valor de Comparação")
+
+tabela_de_comparacao.plot(kind="bar")
+
+limite = 1
+cor_acima = 'red'
+cor_abaixo = 'green'
+
+cores = np.where(tabela_de_comparacao >= limite, cor_acima, cor_abaixo)
+ax = tabela_de_comparacao.plot(kind='bar', x='Unidade da Federação', y='Valor', color=cores)
+
+ax.axhline(limite, color='blue', linestyle='--')
+
 plt.show()
