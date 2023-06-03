@@ -20,3 +20,73 @@ dataset.dtypes
 dataset[["Quilometragem", "Valor"]].describe()
 
 dataset.info()
+
+"""# Tuplas."""
+
+nome = "passat"
+valor = 153.000
+(nome, valor)
+
+nomes_carros = tuple(["Jetta Variant", "Passat", "Crossfox", "Ds5"])
+nomes_carros
+
+type(nomes_carros)
+
+nomes_carros = tuple(["Jetta Variant", "Passat", "Crossfox", "Ds5"])
+nomes_carros
+
+nomes_carros [0]
+
+nomes_carros[1:3]
+
+nomes_carros = ("Jetta Variant", "Passat", "Crossfox", "Ds5", ("Fusca", "Gol", "C4"))
+nomes_carros
+
+nomes_carros[-1]
+
+nomes_carros[-1][1]
+
+"""# Iterações em Tuplas
+
+"""
+
+nomes_carros = ("Jetta Variant", "Passat", "Crossfox", "Ds5", )
+nomes_carros
+
+for item in nomes_carros:
+  print (item)
+
+"""Desempacotamento de tuplas"""
+
+carro_1, carro_2, carro_3, carro_4 = nomes_carros
+
+carro_1
+
+_, A, _, B = nomes_carros
+
+A
+
+B
+
+_, C, *_ = nomes_carros
+
+C
+
+carros = ["jetta Variant", "passat", "crossfox", "DS5"]
+carros
+
+valores = [88078.64, 105284.98, 128495.03, 57194.65]
+valores
+
+list(zip(carros, valores))
+
+for item in zip(carros, valores):
+  print (item)
+
+for carro, valor in zip(carros, valores):
+  print(carro, valor)
+
+for carro, valor in zip(carros, valores):
+  if(valor > 100000):
+    print(carro)
+
