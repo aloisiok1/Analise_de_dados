@@ -394,3 +394,40 @@ dataset3[(dataset3.Motor == "Motor Diesel") & (dataset3.Zero_km == True)]
 #metodo Query
 dataset3.query("Motor == 'Motor Diesel' and Zero_km == True")
 
+"""#Iterações com DataFrames """
+
+for item in dataset3:
+  print(item)
+
+#criar uma variavel em uma nova coluna de km Média
+for index, row in dataset3.iterrows():
+  if(2019 - row['Ano'] != 0):
+    dataset3.loc[index, 'Km_media'] = row['Quilometragem'] / (2019 - row['Ano'])
+  else:
+    dataset3.loc[index, 'Km_media'] = 0
+
+dataset3
+
+"""#Tratamento de dados"""
+
+dataset3.info()
+
+dataset3.Quilometragem.isna()
+
+dataset3[dataset3.Quilometragem.isna()]
+
+#não subscreve
+dataset3.fillna(0)
+
+dataset3.fillna(0, inplace = True)
+dataset3
+
+dataset3.query("Zero_km ==True")
+
+#outra opção é retirar as opções com o Nan
+dataset = pd.read_csv('/content/db.csv', sep = ';')
+dataset
+
+dataset.dropna(subset = ['Quilometragem'], inplace = True)
+dataset
+
