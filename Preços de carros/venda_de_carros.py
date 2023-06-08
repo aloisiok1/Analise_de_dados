@@ -329,3 +329,68 @@ dataset2
 dataset3 = pd.read_csv("/content/db.csv", sep = ";", index_col = 0)
 dataset3
 
+"""#Seleções com DataFrames  """
+
+#selecionando colunas
+dataset3["Valor"]
+
+type(dataset3["Valor"])
+
+dataset3[["Valor"]]
+
+type(dataset3[["Valor"]])
+
+#selecionar Linhas
+dataset3[0: 3]
+
+"""# >>  .loc"""
+
+dataset3.loc["Passat"]
+
+#mostrando osmente as linhas selecionadas
+dataset3.loc[["Passat", "Crossfox"]]
+
+#mostrando somente as colunas e linhas selecionadas
+dataset3.loc[["Passat", "Crossfox"], ["Motor", "Valor"]]
+
+#mostrando todas as linhas com os itens determinados
+dataset3.loc[:, ["Motor", "Valor"]]
+
+"""# >>  .iloc"""
+
+#Series
+dataset3.iloc[1]
+
+#DataFrame
+dataset3.iloc[[1]]
+
+#seleciona do 1 até o 3, deixando o 4 de fora.
+dataset3.iloc[1:4]
+
+#tras o resultado na ordem requisitada  
+dataset3.iloc[1:4, [0, 5, 2]]
+
+#selecionando linhas e colunas
+dataset3.iloc[[1,4,6], [0,3,5]]
+
+"""#Queries(consultas) com DataFrame"""
+
+dataset3.head()
+
+dataset3.Motor
+
+# (==) é comparação
+dataset3.Motor == "Motor Diesel"
+
+select = dataset3.Motor == "Motor Diesel"
+select
+
+dataset3[select]
+
+dataset3[(dataset3.Motor == "Motor Diesel") & (dataset3.Zero_km == True)]
+
+(dataset3.Motor == "Motor Diesel") & (dataset3.Zero_km == True)
+
+#metodo Query
+dataset3.query("Motor == 'Motor Diesel' and Zero_km == True")
+
