@@ -90,3 +90,156 @@ for carro, valor in zip(carros, valores):
   if(valor > 100000):
     print(carro)
 
+nome, valor = ('Passat', 100000.0)
+
+nomes = ['Passat', 'Crossfox']
+valores = [100000.0, 75000.0]
+list(zip(nomes, valores))
+
+nomes = ['Passat', 'Crossfox', 'DS5', 'C4', 'Jetta']
+kms = [15000, 12000, 32000, 8000, 50000]
+
+for nome, km in zip(nomes, kms):
+    if(km < 20000):
+        print(nome)
+
+"""## Trabalhos com Dicionários"""
+
+carros = ["Jetta Variant", "Passat", "Crossfox"]
+carros
+
+Valores = [88078.64, 106161.94, 72832.16]
+Valores
+
+carros.index("Passat")
+
+Valores[carros.index("Passat")]
+
+dados = {"Jetta Variant" : 88079.64, "Passat" : 106161.94, "crossfox" : 72832.16}
+dados
+
+type(dados)
+
+list(zip(carros,Valores))
+
+dados = dict(zip(carros, Valores))
+dados
+
+#verificar valor de item dentro da base
+dados["Passat"]
+
+#verificar de item está na base
+"Passat" in dados
+
+#verificar de item está na base
+"fusca" in dados
+
+#verificar de item está na base
+"Fusca" not in dados
+
+#verificar numero de itens
+len(dados)
+
+#incluir novo item
+dados["DS5"] = 124549.07
+
+dados
+
+#Eliminar item
+del dados["Passat"]
+
+dados
+
+#retornar item
+dados.update({"Passat": 106161.94})
+dados
+
+#atualizar valor e inserir novo ao mesmo tempo
+dados.update({"Passat":106161.75, "Fusca":150000})
+dados
+
+"""#dict.copy"""
+
+dadosCopy = dados.copy()
+dados
+
+#modificando apenas a base de dados "dadosCopy"
+del dadosCopy["Fusca"]
+dadosCopy
+
+dados
+
+"""#dict.pop"""
+
+dadosCopy.pop("Passat")
+
+dadosCopy
+
+#inserir mensagem para se a chave não estiver
+dadosCopy.pop("passat", "chave não encontrada")
+
+"""#dict.clear"""
+
+dadosCopy.clear()
+dadosCopy
+
+"""Iteração em dicionários
+##dict.keys()
+"""
+
+dados.keys()
+
+for key in dados.keys():
+  print(dados[key])
+
+dados.values()
+
+"""#dict items"""
+
+for item in dados.items():
+  print(item)
+
+for key, value in dados.items():
+  print(key, value)
+
+for key, value in dados.items():
+  if (value > 100000):
+    print(key)
+
+dados2 = {
+    'Crossfox': {'valor': 72000, 'ano': 2005}, 
+    'DS5': {'valor': 125000, 'ano': 2015}, 
+    'Fusca': {'valor': 150000, 'ano': 1976}, 
+    'Jetta': {'valor': 88000, 'ano': 2010}, 
+    'Passat': {'valor': 106000, 'ano': 1998}
+}
+
+for item in dados2.items():
+    if(item[1]['ano'] >= 2000):
+        print(item[0])
+
+"""# Funções
+
+Built-in Function
+"""
+
+valores = []
+for valor in dados.values():
+  valores.append(valor)
+valores
+
+soma = 0
+for valor in dados.values():
+  soma += valor
+soma
+
+list(dados.values())
+
+sum(dados.values())
+
+sum(dados.values(), 1000000)
+
+help(print)
+
+print?
+
