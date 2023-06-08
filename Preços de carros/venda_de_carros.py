@@ -243,3 +243,47 @@ help(print)
 
 print?
 
+"""#Funções com e sem Parâmetros"""
+
+#funções sem parâmetros  
+ def media():
+  valor = (1 + 2 + 3)/3
+  print (valor)
+
+media()
+
+#funções com parâmetros
+def media(number_1, number_2, number_3):
+  valor = (number_1 + number_2 + number_3)/3
+  print(valor)
+
+media(1, 2, 3)
+
+media(23, 45, 34)
+
+def media(lista):
+  valor = sum(lista)/ len(lista)
+  print(valor)
+
+media([1, 2, 5, 9, 47])
+
+"""#funções que retornam valores"""
+
+def media(lista):
+  valor = sum(lista)/ len(lista)
+  return valor
+
+media({1,5,7,9,15,41})
+
+def media(lista):
+  valor = sum(lista)/ len(lista)
+  return (valor, len(lista))
+
+media({1,5,7,9,15,41})
+
+resultado, n = media({1,5,7,9,15,41})
+
+resultado
+
+n
+
