@@ -287,3 +287,45 @@ resultado
 
 n
 
+
+
+"""#Pandas Básico 
+
+Series / DataFrame
+"""
+
+import pandas as pd
+
+carros = ["Jetta Variant", "Passat", "Cross Fox"]
+carros
+
+pd.Series(carros)
+
+dados = [{"Nome":'Jetta Variant', "Motor": "Motor 4.0 Turbo", "Ano": "2003", "Quilometragem": 44410.0, "Zero_km": False, "Valor":88078.64},
+{"Nome":'Crossfox', "Motor":"Motor Diesel V8", "Ano":1990, "Quilometragem": 37123.0, "Zero_km": False, "Valor": 72832.16},
+{"Nome": 'Passat', "Motor": "Motor Diesel", "Ano": 1991, "Quilometragem": 5712.5, "Zero_km": False, "Valor": 106161.75}]
+dados
+
+dataset = pd.DataFrame(dados)
+dataset
+
+#mudar a ordem das colunas
+dataset = dataset[["Nome", "Ano", "Zero_km", "Motor", "Quilometragem", "Valor"]]
+dataset
+
+dados3 = dados = {
+    'Nome': ['Jetta Variant', 'Passat', 'Crossfox'], 
+    'Motor': ['Motor 4.0 Turbo', 'Motor Diesel', 'Motor Diesel V8'],
+    'Ano': [2003, 1991, 1990],
+    'Quilometragem': [44410.0, 5712.0, 37123.0],
+    'Zero_km': [False, False, False],
+    'Valor': [88078.64, 106161.94, 72832.16]
+}
+dados3
+
+dataset2 = pd.DataFrame(dados3)
+dataset2
+
+dataset3 = pd.read_csv("/content/db.csv", sep = ";", index_col = 0)
+dataset3
+
